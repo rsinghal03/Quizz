@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.fragment.app.Fragment
-import com.example.quizz.QuizzApplication
+import com.example.quizz.DaggerInit
 import com.example.quizz.R
-import com.example.quizz.data.model.QuizDescription
+import com.example.quizz.data.model2.QuizResponse
 import kotlinx.android.synthetic.main.quizz_attempt_fragment.*
 import javax.inject.Inject
 
@@ -23,7 +23,7 @@ class QuizzAttemptFragment : Fragment(), QuizzAttemptContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        QuizzApplication.getInstance().quizzDiComponent.inject(this)
+        DaggerInit.instance?.quizzDiComponent?.inject(this)
     }
 
     override fun onCreateView(
@@ -42,10 +42,10 @@ class QuizzAttemptFragment : Fragment(), QuizzAttemptContract.View {
         quizzAttemptPresenter.getQuizzQuestions()
     }
 
-    override fun showQuizz(quizzDescription: QuizDescription) {
-        tv_question_description.text = quizzDescription.questions[0].description
+    override fun showQuizz(quizResponse: QuizResponse) {
+        tv_question_description.text = quizResponse.questions[0].description
         rg_single_choice_holder.visibility = View.VISIBLE
-        for ((index, option) in quizzDescription.questions[0].options.withIndex()) {
+        for ((index, option) in quizResponse.questions[0].options.withIndex()) {
             val radioButton = LayoutInflater.from(requireContext())
                 .inflate(
                     R.layout.rb_single_choice,

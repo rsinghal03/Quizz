@@ -1,4 +1,4 @@
-package com.example.quizz.data.model
+package com.example.quizz.data.model2
 
 data class Option(
     val description: String,

@@ -2,7 +2,7 @@ package com.example.quizz.ui.quizattempt
 
 import android.util.Log
 import com.example.quizz.QuizzServiceLocator
-import com.example.quizz.data.model.QuizzResponse
+import com.example.quizz.data.model2.QuizResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -25,8 +25,9 @@ class QuizzAttemptPresenter(val serviceLocator: QuizzServiceLocator) : QuizzAtte
         Log.i(TAG, "handleError")
     }
 
-    private fun handleSuccessResult(success: QuizzResponse?) {
-        success?.quizzes?.quizDescription?.let {
+    private fun handleSuccessResult(success: QuizResponse?) {
+        success?.let {
+            serviceLocator.getDataFromLocalDb().insertData(it.questions)
             view.showQuizz(it)
         }
     }

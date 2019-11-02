@@ -1,42 +1,31 @@
 {
-  "quizzes": {
-    "quizDescription": {
-      "creator_id": "Rahul Singhal",
-      "creator_name": "Rahul Singhal",
-      "description": "General knowledge quiz",
-      "difficulty": "easy",
-      "date_published": "2019/11/02",
-      "max_marks": 16,
-      "questions": [
+  "questions": [
+    {
+      "description": "Who is president of India",
+      "marks": 2,
+      "options": [
         {
-          "description": "Who is president of India",
-          "marks": 2,
-          "options": [
-            {
-              "description": "Ram Nath Kovind",
-              "is_correct": true,
-              "remarks": "none"
-            },
-            {
-              "description": "Narendra Modi",
-              "is_correct": true,
-              "remarks": "none"
-            },
-            {
-              "description": "Amit shah",
-              "is_correct": false,
-              "remarks": "none"
-            },
-            {
-              "description": "None of the above.",
-              "is_correct": false,
-              "remarks": "none"
-            }
-          ],
-          "type": "single-choice"
+          "description": "Ram Nath Kovind",
+          "is_correct": true,
+          "remarks": "none"
+        },
+        {
+          "description": "Narendra Modi",
+          "is_correct": true,
+          "remarks": "none"
+        },
+        {
+          "description": "Amit shah",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "None of the above.",
+          "is_correct": false,
+          "remarks": "none"
         }
       ],
-      "title": "Quiz 1"
+      "type": "single-choice"
     }
-  }
+  ]
 }

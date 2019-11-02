@@ -1,11 +1,11 @@
 package com.example.quizz.ui.quizattempt
 
-import com.example.quizz.data.model.QuizDescription
+import com.example.quizz.data.model2.QuizResponse
 
 interface QuizzAttemptContract {
 
     interface View {
-        fun showQuizz(quizzDescription: QuizDescription)
+        fun showQuizz(quizResponse: QuizResponse)
     }
 
     interface Presenter {
