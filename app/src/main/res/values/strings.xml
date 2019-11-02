@@ -2,5 +2,7 @@
     <string name="app_name">Quizz</string>
 
     <string name="subjective_hint">Enter your answer here</string>
+    <string name="radio_quiz_filter_all">All</string>
+    <string name="start_quiz_btn">Start Quizz</string>
 
 </resources>

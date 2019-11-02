@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_medium"
-                android:textColor="@color/white"
+                android:textColor="@android:color/black"
                 android:textSize="@dimen/text_large"
                 tools:text="URIs identify and URLs locate; however, locators are also identifiers, so every URL is also a URI, but there are URIs which are not URLs. Which of the following is(are) URIs, but NOT URL(s)?" />
 
@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="@dimen/margin_regular"
-                    android:visibility="visible">
+                    android:visibility="gone">
                     <!--Holds options for SINGLE choice questions -->
                 </RadioGroup>
 

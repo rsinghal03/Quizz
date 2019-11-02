@@ -1,16 +1,16 @@
 package com.example.quizz.networking
 
-import com.example.quizz.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
 
 class QuizzRequestInterceptor : Interceptor {
+ val respose = "mock"
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
         val url = request.url()
-        if(BuildConfig.FLAVOR == "mock") {
+        if(respose == "mock") {
             return getMockResponse(request)
         }
         return chain.proceed(request)
