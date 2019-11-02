@@ -1,7 +1,8 @@
-package com.example.quizz
+package com.example.quizz.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.quizz.R
 
 class MainActivity : AppCompatActivity() {
 
