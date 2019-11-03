@@ -38,7 +38,7 @@ class QuizResultDetails : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         review_btn.setOnClickListener {
-            replace(QuizzAttemptFragment.getInstance(true), R.id.container,false)
+            replace(QuizzAttemptFragment.getInstance(true), R.id.container, false)
         }
         val t = "$mScore/$mMaxScore"
         tv_number_scored.text = t

@@ -1,7 +1,7 @@
 package com.example.quizz.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.quizz.R
 import com.example.quizz.extension.add
 import com.example.quizz.ui.listofquiz.ListOfQuizFragment
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if(supportFragmentManager.backStackEntryCount >= 1){
+        if (supportFragmentManager.backStackEntryCount >= 1) {
             supportFragmentManager.popBackStack()
         } else {
             finish()

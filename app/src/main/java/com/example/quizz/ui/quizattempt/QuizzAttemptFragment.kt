@@ -113,7 +113,11 @@ class QuizzAttemptFragment : Fragment(), QuizzAttemptContract.View, View.OnClick
     }
 
     override fun loadSummaryResult(score: Int, total: Int) {
-        replace(QuizResultDetails.getInstance(total.toString(), score.toString()), R.id.container, false)
+        replace(
+            QuizResultDetails.getInstance(total.toString(), score.toString()),
+            R.id.container,
+            false
+        )
     }
 
     override fun enableNextBtn() {

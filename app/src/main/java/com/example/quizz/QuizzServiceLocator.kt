@@ -10,7 +10,10 @@ interface QuizzServiceLocator {
     fun getDataFromLocalDb(): QuizzDbRepository
 }
 
-class QuizzServiceLocatorImpl(private val quizzServiceProvider: QuizzServiceProvider, val dbRepository: QuizzDbRepository ) : QuizzServiceLocator {
+class QuizzServiceLocatorImpl(
+    private val quizzServiceProvider: QuizzServiceProvider,
+    val dbRepository: QuizzDbRepository
+) : QuizzServiceLocator {
 
     override fun getDataFromLocalDb(): QuizzDbRepository {
         return dbRepository

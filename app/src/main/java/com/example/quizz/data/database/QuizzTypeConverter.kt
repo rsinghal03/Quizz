@@ -2,7 +2,6 @@ package com.example.quizz.data.database
 
 import androidx.room.TypeConverter
 import com.example.quizz.data.model2.Option
-import com.example.quizz.data.model2.Question
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

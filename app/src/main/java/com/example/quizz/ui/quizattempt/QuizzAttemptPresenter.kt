@@ -46,12 +46,12 @@ class QuizzAttemptPresenter(private val serviceLocator: QuizzServiceLocator) :
         observable.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-            mIsReview = true
-            mPointer = 0
-            mUserAttemptQuestions = ArrayList()
-            mUserAttemptQuestions.addAll(it)
-            displayReviewQuiz((it))
-        }.addTo(compositeDisposable)
+                mIsReview = true
+                mPointer = 0
+                mUserAttemptQuestions = ArrayList()
+                mUserAttemptQuestions.addAll(it)
+                displayReviewQuiz((it))
+            }.addTo(compositeDisposable)
     }
 
     private fun displayReviewQuiz(list: List<Question>?) {
@@ -73,7 +73,7 @@ class QuizzAttemptPresenter(private val serviceLocator: QuizzServiceLocator) :
     }
 
     private fun displayQuiz(success: QuizResponse) {
-        if(!mIsReview) {
+        if (!mIsReview) {
             mQuestions = ArrayList(success.questions)
             mUserAttemptQuestions = ArrayList()
             for (question in mQuestions) {
@@ -118,9 +118,9 @@ class QuizzAttemptPresenter(private val serviceLocator: QuizzServiceLocator) :
 
     private fun onSubmitClicked() {
         var userScore = 0
-        var maxMark = mUserAttemptQuestions.size*2
+        var maxMark = mUserAttemptQuestions.size * 2
 
-        if(!mIsReview) {
+        if (!mIsReview) {
             for (userAttempt in mUserAttemptQuestions) {
                 if (mQuestions.contains(userAttempt)) {
                     userScore += userAttempt.marks
@@ -130,8 +130,8 @@ class QuizzAttemptPresenter(private val serviceLocator: QuizzServiceLocator) :
             view.loadSummaryResult(userScore, maxMark)
             serviceLocator.getDataFromLocalDb().insertData(mUserAttemptQuestions)
         } else {
-            for(userAttempt in mUserAttemptQuestions) {
-                if(userAttempt.isAttemptCorrect){
+            for (userAttempt in mUserAttemptQuestions) {
+                if (userAttempt.isAttemptCorrect) {
                     userScore += userAttempt.marks
                 }
             }

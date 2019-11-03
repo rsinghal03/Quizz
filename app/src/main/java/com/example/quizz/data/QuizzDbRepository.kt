@@ -1,9 +1,7 @@
 package com.example.quizz.data
 
 import android.content.Context
-import androidx.lifecycle.LiveData
 import com.example.quizz.data.database.QuizzDatabase
-import com.example.quizz.data.model2.Option
 import com.example.quizz.data.model2.Question
 import io.reactivex.Observable
 import java.util.concurrent.Executors

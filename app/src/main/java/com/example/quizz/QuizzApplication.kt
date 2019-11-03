@@ -1,8 +1,6 @@
 package com.example.quizz
 
 import android.app.Application
-import com.example.quizz.dependencyInjection.DaggerQuizzDiComponent
-import com.example.quizz.dependencyInjection.QuizzDiComponent
 import com.facebook.stetho.Stetho
 
 class QuizzApplication : Application() {
