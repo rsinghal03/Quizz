@@ -42,6 +42,7 @@ class QuizResultDetails : Fragment() {
         }
         val t = "$mScore/$mMaxScore"
         tv_number_scored.text = t
+
     }
 
     companion object {

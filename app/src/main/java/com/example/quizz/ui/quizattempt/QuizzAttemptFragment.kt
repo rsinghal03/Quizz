@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.quizz.DaggerInit
@@ -74,42 +73,42 @@ class QuizzAttemptFragment : Fragment(), QuizzAttemptContract.View, View.OnClick
         rg_single_choice_holder.visibility = View.VISIBLE
 
         if (mIsReview) {
-            if (question.isAttemptCorrect) {
-                tv_question_description.setTextColor(
+            val isAttemptCorrect = question.isAttemptCorrect
+            tv_question_description.setTextColor(
+                if (isAttemptCorrect)
                     ContextCompat.getColor(
                         requireContext(),
                         R.color.green
                     )
-                )
-            } else {
-                tv_question_description.setTextColor(
+                else
                     ContextCompat.getColor(
                         requireContext(),
                         R.color.red
-                    )
-                )
-            }
+                    ))
         }
+
+        var checkRadioButtonIndex = -1
 
         for ((index, option) in question.options.withIndex()) {
             val radioButton = LayoutInflater.from(requireContext())
                 .inflate(
                     R.layout.rb_single_choice,
-                    fl_all_options_type_holder,
+                    rg_single_choice_holder,
                     false
                 ) as RadioButton
             radioButton.text = option.description
             radioButton.setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) {
                     question.resetOptions()
-                    rg_single_choice_holder.clearCheck()
                     option.is_correct = true
-                    buttonView.isChecked = true
                 }
             }
-            radioButton.isChecked = option.is_correct
+            if (option.is_correct)
+            checkRadioButtonIndex = index
             rg_single_choice_holder.addView(radioButton, index)
         }
+        val radioButton: RadioButton? = rg_single_choice_holder.getChildAt(checkRadioButtonIndex) as? RadioButton?
+        radioButton?.isChecked = true
     }
 
     override fun loadSummaryResult(score: Int, total: Int) {
