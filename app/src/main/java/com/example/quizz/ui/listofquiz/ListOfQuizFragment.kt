@@ -24,7 +24,7 @@ class ListOfQuizFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         quiz_start_btn.setOnClickListener {
-            replace(QuizzAttemptFragment.instance, R.id.container)
+            replace(QuizzAttemptFragment.getInstance(), R.id.container)
         }
     }
 

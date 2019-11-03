@@ -1,19 +1,14 @@
 package com.example.quizz
 
 import android.app.Application
-import com.example.quizz.dependencyInjection.DaggerQuizzDiComponent
-import com.example.quizz.dependencyInjection.QuizzDiComponent
+import com.facebook.stetho.Stetho
 
 class QuizzApplication : Application() {
 
-    lateinit var quizzDiComponent: QuizzDiComponent
-
-    init {
-        initDagger()
-    }
-
-    private fun initDagger() {
-        quizzDiComponent = DaggerQuizzDiComponent.create()
+    override fun onCreate() {
+        super.onCreate()
+        DaggerInit.getInstance(this)
+        Stetho.initializeWithDefaults(this)
     }
 
     companion object {
