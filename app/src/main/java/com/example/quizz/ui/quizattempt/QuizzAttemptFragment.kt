@@ -116,7 +116,7 @@ class QuizzAttemptFragment : Fragment(), QuizzAttemptContract.View, View.OnClick
         replace(
             QuizResultDetails.getInstance(total.toString(), score.toString()),
             R.id.container,
-            false
+            true
         )
     }
 
