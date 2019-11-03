@@ -13,4 +13,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         add(ListOfQuizFragment.instance, R.id.container, false)
     }
+
+    override fun onBackPressed() {
+        if(supportFragmentManager.backStackEntryCount >= 1){
+            supportFragmentManager.popBackStack()
+        } else {
+            finish()
+        }
+    }
 }

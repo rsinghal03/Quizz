@@ -11,6 +11,7 @@
     android:paddingBottom="@dimen/margin_medium"
     android:paddingTop="@dimen/margin_medium"
     android:text="@string/radio_quiz_filter_all"
+    android:checked="true"
     android:textAlignment="textStart"
     android:textColor="@android:color/black"
     android:textSize="@dimen/text_large">

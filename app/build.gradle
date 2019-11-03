@@ -82,4 +82,8 @@ dependencies {
     //    stetho
     implementation 'com.facebook.stetho:stetho:1.5.1'
 
+    // https://mvnrepository.com/artifact/androidx.cardview/cardview
+    implementation group: 'androidx.cardview', name: 'cardview', version: '1.0.0'
+
+
 }

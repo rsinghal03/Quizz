@@ -1,6 +1,7 @@
 {
   "questions": [
     {
+      "id": "1",
       "description": "Who is president of India",
       "marks": 2,
       "options": [
@@ -11,7 +12,7 @@
         },
         {
           "description": "Narendra Modi",
-          "is_correct": true,
+          "is_correct": false,
           "remarks": "none"
         },
         {
@@ -22,6 +23,34 @@
         {
           "description": "None of the above.",
           "is_correct": false,
+          "remarks": "none"
+        }
+      ],
+      "type": "single-choice"
+    },
+    {
+      "id": "2",
+      "description": "Who is president of USA",
+      "marks": 2,
+      "options": [
+        {
+          "description": "Ram Nath Kovind",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "Narendra Modi",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "Amit shah",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "None of the above.",
+          "is_correct": true,
           "remarks": "none"
         }
       ],

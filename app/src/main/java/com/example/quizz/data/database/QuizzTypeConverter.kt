@@ -17,7 +17,7 @@ object QuizzTypeConverter {
     @TypeConverter
     @JvmStatic
     fun stringToListOfOption(string: String): List<Option> {
-        val listType = object : TypeToken<List<Question>>(){}.type
+        val listType = object : TypeToken<List<Option>>(){}.type
 
         return Gson().fromJson(string, listType)
     }

@@ -98,6 +98,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_next_circle_filled" />
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

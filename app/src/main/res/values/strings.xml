@@ -4,5 +4,8 @@
     <string name="subjective_hint">Enter your answer here</string>
     <string name="radio_quiz_filter_all">All</string>
     <string name="start_quiz_btn">Start Quizz</string>
+    <string name="submit_que_btn">Submit</string>
+    <string name="quiz_summary_msg">Here is your score</string>
+    <string name="review_quiz_btn">Review</string>
 
 </resources>

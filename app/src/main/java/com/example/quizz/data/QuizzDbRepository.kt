@@ -1,7 +1,9 @@
 package com.example.quizz.data
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import com.example.quizz.data.database.QuizzDatabase
+import com.example.quizz.data.model2.Option
 import com.example.quizz.data.model2.Question
 import java.util.concurrent.Executors
 
@@ -20,7 +22,7 @@ class QuizzDbRepository(private val context: Context) {
         }
     }
 
-//    fun getSearchQueryResult(query: String): LiveData<WikiMediaResponse> {
-//        return db.getWikipediaSearchDao().getSearchQueryResult(query)
-//    }
+    fun getListOfQuestion(): LiveData<List<Question>> {
+        return db.getQuizzDao().getListOfQuestion()
+    }
 }
