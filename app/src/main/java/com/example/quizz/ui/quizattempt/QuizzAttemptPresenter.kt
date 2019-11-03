@@ -1,13 +1,16 @@
 package com.example.quizz.ui.quizattempt
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import com.example.quizz.QuizzServiceLocator
 import com.example.quizz.data.model2.Question
 import com.example.quizz.data.model2.QuizResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 
-class QuizzAttemptPresenter(val serviceLocator: QuizzServiceLocator) :
+class QuizzAttemptPresenter(private val serviceLocator: QuizzServiceLocator) :
     QuizzAttemptContract.Presenter {
 
     private lateinit var mQuizResponse: QuizResponse
@@ -16,7 +19,11 @@ class QuizzAttemptPresenter(val serviceLocator: QuizzServiceLocator) :
 
     private var mPointer = 0
 
+    private lateinit var liveDataListOfQuestion: LiveData<List<Question>>
+
     private var mIsReview = false
+
+    private val compositeDisposable = CompositeDisposable()
 
     private lateinit var mQuestions: ArrayList<Question>
 
@@ -27,25 +34,30 @@ class QuizzAttemptPresenter(val serviceLocator: QuizzServiceLocator) :
     }
 
     override fun getQuizzQuestions() {
-        val dispose = serviceLocator.getDataFromRemote().getQuizz()
+        serviceLocator.getDataFromRemote().getQuizz()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ success -> handleSuccessResult(success) }, { error -> handleError(error) })
+            .addTo(compositeDisposable)
     }
 
     override fun getUserAttemptedQuiz() {
-        val liveData = serviceLocator.getDataFromLocalDb().getListOfQuestion()
-        liveData.observeForever {
+        val observable = serviceLocator.getDataFromLocalDb().getListOfQuestion()
+        observable.subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
             mIsReview = true
             mPointer = 0
             mUserAttemptQuestions = ArrayList()
             mUserAttemptQuestions.addAll(it)
             displayReviewQuiz((it))
-        }
+        }.addTo(compositeDisposable)
     }
 
     private fun displayReviewQuiz(list: List<Question>?) {
         list?.let { view.loadQuestion(it[mPointer]) }
+        compositeDisposable.clear()
+
     }
 
     private fun handleError(error: Throwable?) {

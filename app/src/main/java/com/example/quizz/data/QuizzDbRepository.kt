@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import com.example.quizz.data.database.QuizzDatabase
 import com.example.quizz.data.model2.Option
 import com.example.quizz.data.model2.Question
+import io.reactivex.Observable
 import java.util.concurrent.Executors
 
 class QuizzDbRepository(private val context: Context) {
@@ -22,7 +23,7 @@ class QuizzDbRepository(private val context: Context) {
         }
     }
 
-    fun getListOfQuestion(): LiveData<List<Question>> {
+    fun getListOfQuestion(): Observable<List<Question>> {
         return db.getQuizzDao().getListOfQuestion()
     }
 }

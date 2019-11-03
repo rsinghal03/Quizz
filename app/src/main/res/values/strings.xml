@@ -7,5 +7,6 @@
     <string name="submit_que_btn">Submit</string>
     <string name="quiz_summary_msg">Here is your score</string>
     <string name="review_quiz_btn">Review</string>
+    <string name="score_text">Your Score</string>
 
 </resources>

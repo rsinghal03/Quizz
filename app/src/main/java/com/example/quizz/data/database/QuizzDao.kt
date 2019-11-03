@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.quizz.data.model2.Option
 import com.example.quizz.data.model2.Question
+import io.reactivex.Observable
 
 @Dao
 interface QuizzDao {
@@ -15,6 +16,6 @@ interface QuizzDao {
     fun insertListOfQuiz(listOfQuestion: List<Question>)
 
     @Query("select * from QuizzTable")
-    fun getListOfQuestion(): LiveData<List<Question>>
+    fun getListOfQuestion(): Observable<List<Question>>
 
 }

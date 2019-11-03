@@ -14,7 +14,7 @@ import com.example.quizz.data.model2.Question
 import com.example.quizz.extension.gone
 import com.example.quizz.extension.replace
 import com.example.quizz.extension.visible
-import com.example.quizz.ui.quizresultdetails.QuizResultDeatils
+import com.example.quizz.ui.quizresultdetails.QuizResultDetails
 import com.example.quizz.utils.IS_REVIEW
 import kotlinx.android.synthetic.main.quizz_attempt_fragment.*
 import javax.inject.Inject
@@ -113,8 +113,7 @@ class QuizzAttemptFragment : Fragment(), QuizzAttemptContract.View, View.OnClick
     }
 
     override fun loadSummaryResult(score: Int, total: Int) {
-        Toast.makeText(requireContext(), "$score / $total", Toast.LENGTH_SHORT).show()
-        replace(QuizResultDeatils.instance, R.id.container, false)
+        replace(QuizResultDetails.getInstance(total.toString(), score.toString()), R.id.container, false)
     }
 
     override fun enableNextBtn() {

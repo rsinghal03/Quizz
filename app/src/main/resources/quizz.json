@@ -30,27 +30,83 @@
     },
     {
       "id": "2",
-      "description": "Who is president of USA",
+      "description": "India is likely to join RCEP. trade bloc. Expand RCEP",
       "marks": 2,
       "options": [
         {
-          "description": "Ram Nath Kovind",
+          "description": "Regional Commission for Extended Participation",
           "is_correct": false,
           "remarks": "none"
         },
         {
-          "description": "Narendra Modi",
-          "is_correct": false,
-          "remarks": "none"
-        },
-        {
-          "description": "Amit shah",
-          "is_correct": false,
-          "remarks": "none"
-        },
-        {
-          "description": "None of the above.",
+          "description": "Regional Comprehensive for Economic Partnership",
           "is_correct": true,
+          "remarks": "none"
+        },
+        {
+          "description": "Regional Collaborative for Extended Participation",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "Regional Comprehensive for Extended Participation",
+          "is_correct": false,
+          "remarks": "none"
+        }
+      ],
+      "type": "single-choice"
+    },
+    {
+      "id": "3",
+      "description": "The current stock market rally is limited to a few stocks even within the large cap category. The stockmarket watchers in India have come up with their own acronym not unilke FAANG in the US. They call it HRITHIK . Ifthe two Hs are HDFC and HDFC Bank. What are the 2 1's ",
+      "marks": 2,
+      "options": [
+        {
+          "description": "IBM",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "TCS",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "Infosys & IBM",
+          "is_correct": true,
+          "remarks": "none"
+        },
+        {
+          "description": "Infosys and its subsidiary and IBM owned company",
+          "is_correct": false,
+          "remarks": "none"
+        }
+      ],
+      "type": "single-choice"
+    },
+    {
+      "id": "4",
+      "description": "Haldivastram is good for balancing tridoshas; it has a +ve effect on blood circulation .Manjisthavastram acts as a blood purifier and is good for skin diseases, arthritis and ulcers. Neelavastram, is cooling and has a calming effect on the nervous system.What are these ?",
+      "marks": 2,
+      "options": [
+        {
+          "description": "Firecrackers",
+          "is_correct": true,
+          "remarks": "none"
+        },
+        {
+          "description": "USA made cracker",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "Tube light",
+          "is_correct": false,
+          "remarks": "none"
+        },
+        {
+          "description": "None of the above",
+          "is_correct": false,
           "remarks": "none"
         }
       ],
